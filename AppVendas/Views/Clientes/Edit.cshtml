@@ -38,8 +38,21 @@
                 <input asp-for="DataCadastro" class="form-control" />
                 <span asp-validation-for="DataCadastro" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="row">
+                <div class="col-4">
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary d-flex align-items-center px-5 mt-3 w-100 justify-content-center py-3">
+                            <ion-icon name="save" class="me-2"></ion-icon> Salvar
+                        </button>
+                    </div>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <a asp-action="Index" class="btn btn-outline-info d-flex align-items-center px-5 mt-3 w-100 justify-content-center py-3">
+                        <ion-icon name="arrow-back" class="me-2"></ion-icon>Voltar
+                    </a>
+                </div>
             </div>
         </form>
     </div>
@@ -50,5 +63,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
